@@ -1,28 +1,23 @@
 ---
+- name: Ubuntu 16.04 Apt Sourcelist 
+  sudo: yes
+  shell: "curl https://repogen.simplylinux.ch/txt/xenial/sources_a4a3a373d08b1e98e59f964f2244a6dd32eea8fc.txt | tee /etc/apt/sources.list"
+
 - name: Installing packages like curl, git, tree etc
   sudo: yes
   apt: pkg={{ item }} state=installed update_cache=yes
   with_items:
-      - ack-grep
+      - build-essential
       - curl
+      - wget
+      - python
       - git
       - make
+      - automake
+      - autoconf
       - tree
-      - memcached
-      - nodejs
-      - build-essential
-      - libxslt-dev
-      - libxml2-dev
-      - imagemagick
-      - libmagickcore-dev
-      - libmagickwand-dev
+      - unzip
 
 - name: Installing heroku toolbelt
   sudo: no
   shell: "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh"
-
-- name: Rename ack-grep to ack
-  sudo: yes
-  shell: "dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep"
-  args:
-    creates: /usr/bin/ack
