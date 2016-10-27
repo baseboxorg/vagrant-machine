@@ -1,2 +1,2 @@
 [dbservers]
-vagrant.machine
+base.node
