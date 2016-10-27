@@ -1,28 +1,6 @@
 locale: en_US.UTF-8
 
 git:
-  config_username: Neeraj Singh
-  config_email: neeraj@BigBinary.com
+  config_username: BaseBoxOrg
+  config_email: admin@basebox.org
 
-phantomjs:
-  version: 1.9.7-linux-x86_64
-
-postgresql:
-  version: 9.4
-  repo: 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main'
-  install_development_headers: true
-
-  pg_username: vagrant
-  pg_password: welcome
-
-  user: postgres
-  group: postgres
-
-  config:
-    shared_buffers: 24MB
-    work_mem: 1MB
-
-    checkpoint_segments: 3
-    checkpoint_completion_target: 0.5
-
-    effective_cache_size: 128MB
