@@ -1,5 +1,5 @@
 ---
-- name: Ubuntu 16.04 Apt Sourcelist 
+- name: Setting up apt sourcelist 
   sudo: yes
   shell: "curl https://repogen.simplylinux.ch/txt/xenial/sources_a4a3a373d08b1e98e59f964f2244a6dd32eea8fc.txt | tee /etc/apt/sources.list"
 
@@ -17,7 +17,15 @@
       - autoconf
       - tree
       - unzip
+      - nfs-common
+      - portmap
+      - cachefilesd
 
+- name: Setting up cachefilesd
+  sudo: yes
+  shell: "echo "RUN=yes" | tee /etc/default/cachefilesd"
+  
+  
 - name: Installing heroku toolbelt
   sudo: no
   shell: "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh"
