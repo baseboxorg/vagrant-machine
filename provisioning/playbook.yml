@@ -6,7 +6,5 @@
   roles:
     - { role: packages_ubuntu }
     - { role: ruby }
-    - { role: phantomjs }
     - { role: customize_git }
     - { role: customize_bash }
-    - { role: postgres}
